@@ -321,7 +321,8 @@ def add_expression(queryset, size, value, value_name):
 
     # range
     if command == 'range':
-        assert len(args) == 1, "range(start:int) should have start argument "
+        assert len(args) == 1, 'range(start:int) should have 1 arg: start value for a range.' \
+                                'The range ends with start+number of items'
         start = int(args[0])
         values = range(start, start + size)
         for i, v in enumerate(values):
